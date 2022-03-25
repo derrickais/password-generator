@@ -62,8 +62,42 @@ var typeOfChar = function() {
 
 }
 
-var charType = typeOfChar();
-console.log(charType);
+var mergeArrays = function(){
+  charOptions = [];
+  
+  var charType = typeOfChar();
+  
+  if (charType.uppercaseCon){
+    charOptions = charOptions.concat(uppercase);
+    console.log(charOptions);
+  }
+
+  if (charType.lowercaseCon){
+    charOptions = charOptions.concat(lowercase);
+    console.log(charOptions);
+  }
+
+  if (charType.specialCon){
+    charOptions = charOptions.concat(special);
+    console.log(charOptions);
+  }
+
+  if (charType.numericCon){
+    charOptions = charOptions.concat(numeric);
+    console.log(charOptions);
+  }
+
+  return charOptions;
+}
+
+var abc = mergeArrays();
+console.log(abc);
+
+
+var generatePassword = function(){
+
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
