@@ -34,7 +34,7 @@ var numOfChar = function(){
 
   isNum = isNaN(num); 
 
-  if (num < 8 || num > 129 || isNum ){
+  if (num < 8 || num > 128 || isNum ){
     alert("Type a valid number");
     return numOfChar();
   } else {
@@ -44,13 +44,10 @@ var numOfChar = function(){
 
 var typeOfChar = function() {
   uppercaseChar = confirm("Do you want uppercase letters in your password?");
-  
 
   lowercaseChar = confirm("Do you want lowercase letters in your password?");
   
-
   specialChar = confirm("Do you want special characters in your password?");
-
 
   numericChar = confirm("Do you want numbers in your password?");
 
