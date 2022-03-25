@@ -17,7 +17,7 @@ var lowercase = [
 
 var special = [
   "/", "[", "!", "@", "#", "$", "%", "^",
-  "&", "*", "(", ")", "_", "+", , "-","=",
+  "&", "*", "(", ")", "_", "+", "-","=",
   "[", "]", "{", "}", ";", ":", "|", ",", 
   ".", "<", ">", "?", "]", "+","~"
 ]
@@ -25,7 +25,7 @@ var special = [
 var numeric = [
   "0", "1", "2", "3", "4", "5", "6", "7",
   "8", "9"
- ]
+]
 
 var numOfChar = function(){
   var num = prompt("How long would you like your password to be? Select a number between 8 and 128");
@@ -41,9 +41,6 @@ var numOfChar = function(){
     return num;
   }
 }
-
-var num = numOfChar();
-console.log(num);
 
 var typeOfChar = function() {
   uppercaseChar = confirm("Do you want uppercase letters in your password?");
@@ -69,33 +66,36 @@ var mergeArrays = function(){
   
   if (charType.uppercaseCon){
     charOptions = charOptions.concat(uppercase);
-    console.log(charOptions);
   }
 
   if (charType.lowercaseCon){
     charOptions = charOptions.concat(lowercase);
-    console.log(charOptions);
   }
 
   if (charType.specialCon){
     charOptions = charOptions.concat(special);
-    console.log(charOptions);
   }
 
   if (charType.numericCon){
     charOptions = charOptions.concat(numeric);
-    console.log(charOptions);
   }
 
   return charOptions;
 }
 
-var abc = mergeArrays();
-console.log(abc);
-
 
 var generatePassword = function(){
+  var num = numOfChar();
 
+  var charArray = mergeArrays();
+
+  var password = "";
+
+  for (var i = 0; i < num; i++){
+    var characterIndex = Math.floor(Math.random()*charArray.length); 
+    password += charArray[characterIndex];
+  }
+  return password;
 }
 
 // Write password to the #password input
